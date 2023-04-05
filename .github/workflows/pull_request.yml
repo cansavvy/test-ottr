@@ -6,7 +6,8 @@ name: Pull Request
 on:
   pull_request:
     branches: [ main, staging ]
-
+  permissions:
+    actions: write
 jobs:
 
   yaml-check:
