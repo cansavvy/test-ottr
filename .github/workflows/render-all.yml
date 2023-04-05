@@ -72,6 +72,8 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git config --global --add safe.directory ${GITHUB_WORKSPACE}
+          git config --global user.email "itcrtrainingnetwork@gmail.com"
+          git config --global user.name "jhudsl-robot"
           git remote set-url origin https://${GH_PAT}@github.com/${GITHUB_REPOSITORY}
           git add --force docs/*
           git commit -m 'Render bookdown' || echo "No changes to commit"
@@ -105,6 +107,8 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git config --global --add safe.directory ${GITHUB_WORKSPACE}
+          git config --global user.email "itcrtrainingnetwork@gmail.com"
+          git config --global user.name "jhudsl-robot"
           git remote set-url origin https://${GH_PAT}@github.com/${GITHUB_REPOSITORY}
           git add --force docs/no_toc*
           git commit -m 'Render toc-less' || echo "No changes to commit"
@@ -166,6 +170,8 @@ jobs:
         run: |
           mkdir -p manuscript
           git config --global --add safe.directory ${GITHUB_WORKSPACE}
+          git config --global user.email "itcrtrainingnetwork@gmail.com"
+          git config --global user.name "jhudsl-robot"
           git remote set-url origin https://${GH_PAT}@github.com/${GITHUB_REPOSITORY}
           git add --force manuscript/*
           git add --force resources/*
@@ -206,6 +212,8 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git config --global --add safe.directory ${GITHUB_WORKSPACE}
+          git config --global user.email "itcrtrainingnetwork@gmail.com"
+          git config --global user.name "jhudsl-robot"
           git remote set-url origin https://${GH_PAT}@github.com/${GITHUB_REPOSITORY}
           git add --force manuscript/*
           git add --force resources/*
