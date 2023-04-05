@@ -71,9 +71,8 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
+          git config --global --add safe.directory ${GITHUB_WORKSPACE}
           git remote set-url origin https://${GH_PAT}@github.com/${GITHUB_REPOSITORY}
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          
           git add --force docs/*
           git commit -m 'Render bookdown' || echo "No changes to commit"
           git pull --allow-unrelated-histories --strategy-option=ours
@@ -105,8 +104,8 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
+          git config --global --add safe.directory ${GITHUB_WORKSPACE}
           git remote set-url origin https://${GH_PAT}@github.com/${GITHUB_REPOSITORY}
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git add --force docs/no_toc*
           git commit -m 'Render toc-less' || echo "No changes to commit"
           git pull --allow-unrelated-histories --strategy-option=ours
@@ -166,8 +165,8 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           mkdir -p manuscript
+          git config --global --add safe.directory ${GITHUB_WORKSPACE}
           git remote set-url origin https://${GH_PAT}@github.com/${GITHUB_REPOSITORY}
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git add --force manuscript/*
           git add --force resources/*
           git add --force docs/*
@@ -206,7 +205,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config --global --add safe.directory ${GITHUB_WORKSPACE}
           git remote set-url origin https://${GH_PAT}@github.com/${GITHUB_REPOSITORY}
           git add --force manuscript/*
           git add --force resources/*
