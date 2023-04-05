@@ -20,6 +20,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Set up git config
+        run: |
+          git config --global --add safe.directory ${GITHUB_WORKSPACE}
+          git config --global user.email "itcrtrainingnetwork@gmail.com"
+          git config --global user.name "jhudsl-robot"
+
         # Use the yaml-env-action action.
       - name: Load environment from YAML
         uses: doughepi/yaml-env-action@v1.0.0
