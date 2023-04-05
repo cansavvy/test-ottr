@@ -72,6 +72,8 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git remote set-url origin https://${GH_PAT}@github.com/${GITHUB_REPOSITORY}
+          git config --system --add safe.directory "$GITHUB_WORKSPACE"
+          
           git add --force docs/*
           git commit -m 'Render bookdown' || echo "No changes to commit"
           git pull --allow-unrelated-histories --strategy-option=ours
