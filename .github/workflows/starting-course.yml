@@ -8,8 +8,7 @@ on:
     branches: [ main, staging ]
   workflow_dispatch:
   
-permissions:
-  actions: write
+permissions: write-all
   
 jobs:
   # Run cleaning process only if workflow is triggered by not being in the Bookdown template anymore
