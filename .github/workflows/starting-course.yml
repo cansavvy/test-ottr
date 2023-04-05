@@ -21,10 +21,6 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GH_PAT }}
 
-      - name: Login as jhudsl-robot
-        run: |
-          git config --system --add safe.directory "$GITHUB_WORKSPACE"
-
 ##### Delete Template-specific files that aren't needed for new courses
 
       # Cleanup Template-specific bits
